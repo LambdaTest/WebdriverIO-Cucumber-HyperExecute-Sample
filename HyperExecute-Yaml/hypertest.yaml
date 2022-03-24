@@ -1,0 +1,33 @@
+version: 0.1
+globalTimeout: 90
+testSuiteTimeout: 90
+testSuiteStep: 90
+retryOnFailure: false
+runson: win
+concurrency: 3
+autosplit: true
+pre:
+  - npm install --force
+
+post:
+  - ls  
+  
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+testDiscovery:
+  type: automatic
+  args:
+    featureFilePaths: Features/
+    frameWork: java
+    specificTags: "@ToDoOne"
+
+testRunnerCommand: npx wdio wdio.conf.js --spec=$test
+
+uploadArtefacts:
+  [{
+    "name": "Reports",
+    "path": ["Reports\\"]
+  }]
+env:
+  AccessKey: ${{.secrets.AccessKey}}

@@ -1,0 +1,32 @@
+version: 0.1
+autosplit: true
+
+matrix:
+  os: ["win", "mac"]
+
+runson: ${matrix.os}
+
+parallelism:  2
+
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+
+pre:
+  - npm install
+post:
+  - ls  
+uploadArtefacts:
+  [{
+    "name": "Reports",
+    "path": ["Reports\\"]
+  }]
+testDiscovery:
+  type: automatic
+  mode: dynamic
+  args:
+    featureFilePaths: Features/
+    frameWork: java
+    specificTags: ["@ToDoOne", "@ToDoTwo"]
+
+testRunnerCommand: npx wdio wdio.conf.js --spec=$test
