@@ -1,4 +1,4 @@
-<img height="100" alt="hypertest_logo" src="https://user-images.githubusercontent.com/1688653/153136695-f5292c75-5d2f-4c70-aeb5-0f00a6962730.png">
+<img height="100" alt="hypertest_logo" src="![image](https://user-images.githubusercontent.com/47247309/159901182-ab4da538-65a9-466c-89c9-cd4d6c05a048.png)">
 
 HyperTest is a smart test orchestration platform to run end-to-end Selenium tests at the fastest speed possible. HyperTest lets you achieve an accelerated time to market by providing a test infrastructure that offers optimal speed, test orchestration, and detailed execution logs.
 
