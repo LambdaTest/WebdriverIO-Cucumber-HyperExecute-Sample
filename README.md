@@ -111,6 +111,7 @@ The *testSuites* object contains a list of commands (that can be presented in an
 testSuites:
   - npx wdio wdio.conf.js --cucumberOpts.tagExpression $tags
 ```
+![image](https://user-images.githubusercontent.com/47247309/160441166-f029c4d6-57d5-4334-ae10-f74200f6dd65.png)
 
 ### Pre Steps and Dependency Caching
 
@@ -248,6 +249,8 @@ The *testRunnerCommand* contains the command that is used for triggering the tes
 ```yaml
 testRunnerCommand: npx wdio wdio.conf.js --spec=$test
 ```
+![image](https://user-images.githubusercontent.com/47247309/160439999-aa78ffac-f8f4-4506-aef4-a69c6de652aa.png)
+
 
 ### Artefacts Management
 
