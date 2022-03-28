@@ -154,6 +154,9 @@ uploadArtefacts:
 
 HyperTest also facilitates the provision to download the artefacts on your local machine. To download the artefacts, click on Artefacts button corresponding to the associated TestID.
 
+![image](https://user-images.githubusercontent.com/47247309/160443096-902088fc-3b7b-409c-bd5c-196a01cf806c.png)
+
+
 ## Test Execution
 
 The CLI option *--config* is used for providing the custom HyperTest YAML file (i.e. *HyperExecute-Yaml/.hyperTestMatrix.yaml.yaml*). Run the following command on the terminal to trigger the tests in Feature file Scenario on the HyperTest grid. 
@@ -161,6 +164,7 @@ The CLI option *--config* is used for providing the custom HyperTest YAML file (
 ```bash
 ./concierge --config --verbose HyperExecute-Yaml/.hyperTestMatrix.yaml
 ```
+![image](https://user-images.githubusercontent.com/47247309/160443214-6f0ec2c4-383d-4c6b-9fbd-60ea03b6c8da.png)
 
 Visit [HyperTest Automation Dashboard](https://automation.lambdatest.com/hypertest) to check the status of execution:
 
