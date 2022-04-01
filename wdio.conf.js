@@ -1,4 +1,4 @@
-exports.config = {
+windows 10exports.config = {
   services: [
     [
       "lambdatest",
@@ -46,7 +46,7 @@ exports.config = {
         maxInstances: 5,
         browserName: 'Chrome',
         browserVersion: 'latest-1',
-        platform: 'linux',
+        platform: 'windows 10',
         build: 'Wdio Hypertest Sample'
       },
     }],
