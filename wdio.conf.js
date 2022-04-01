@@ -1,4 +1,4 @@
-exports.config = {
+windows 10exports.config = {
   services: [
     [
       "lambdatest",
@@ -29,7 +29,7 @@ exports.config = {
   port: 443,
 
   user: process.env.LT_USERNAME,
-  key: process.env.AccessKey,
+  key: process.env.LT_ACCESS_KEY,
 
 
   specs: [
@@ -46,7 +46,7 @@ exports.config = {
         maxInstances: 5,
         browserName: 'Chrome',
         browserVersion: 'latest-1',
-        platform: 'win10',
+        platform: 'windows 10',
         build: 'Wdio Hypertest Sample'
       },
     }],
