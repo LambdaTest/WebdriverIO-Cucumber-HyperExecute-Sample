@@ -46,7 +46,7 @@ windows 10exports.config = {
         maxInstances: 5,
         browserName: 'Chrome',
         browserVersion: 'latest-1',
-        platform: 'windows 10',
+        platform: process.env.HYPEREXECUTE_PLATFORM || 'windows 10',
         build: 'Wdio Hypertest Sample'
       },
     }],
