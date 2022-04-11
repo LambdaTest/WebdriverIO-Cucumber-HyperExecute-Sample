@@ -1,4 +1,4 @@
-windows 10exports.config = {
+exports.config = {
   services: [
     [
       "lambdatest",
