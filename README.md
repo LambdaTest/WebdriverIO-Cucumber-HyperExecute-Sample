@@ -288,13 +288,13 @@ The CLI option *--config* is used for providing the custom HyperExecute YAML fil
 Run the following command on the terminal to trigger tests on Windows platform:
 
 ```bash
-./hyperexecute --config --verbose *HyperExecute-Yaml/.hyperexecute_simple_win.yaml
+./hyperexecute --config --verbose HyperExecute-Yaml/.hyperexecute_simple_win.yaml
 ```
 
 Run the following command on the terminal to trigger tests on Linux platform:
 
 ```bash
-./hyperexecute --config --verbose *HyperExecute-Yaml/.hyperexecute_simple_linux.yaml
+./hyperexecute --config --verbose HyperExecute-Yaml/.hyperexecute_simple_linux.yaml
 ```
 
 ## Secrets Management
