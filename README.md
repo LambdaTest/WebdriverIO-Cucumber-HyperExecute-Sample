@@ -283,7 +283,7 @@ Visit [HyperExecute Automation Dashboard](https://automation.lambdatest.com/hype
 
 ## Run WebdriverIO tests on Windows and Linux platforms
 
-The CLI option *--config* is used for providing the custom HyperExecute YAML file (i.e. *HyperExecute-Yaml/.hyperexecute_simple_win.yaml* for Windows and **HyperExecute-Yaml/..hyperexecute_simple_linux.yaml* for Linux).
+The CLI option *--config* is used for providing the custom HyperExecute YAML file (i.e. *HyperExecute-Yaml/.hyperexecute_simple_win.yaml* for Windows and *HyperExecute-Yaml/.hyperexecute_simple_linux.yaml* for Linux).
 
 Run the following command on the terminal to trigger tests on Windows platform:
 
