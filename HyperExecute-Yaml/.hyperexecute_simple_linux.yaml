@@ -4,7 +4,7 @@ runson: linux
 concurrency: 2
 autosplit: true
 pre:
-  - npm install --force
+  - npm install
 
 cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
@@ -14,6 +14,6 @@ testDiscovery:
   args:
     featureFilePaths: Features/
     frameWork: java
-    specificTags: "@ToDoOne"
+    specificTags: ["@ToDoOne", "@ToDoTwo", "@ToDoThree"]
 
 testRunnerCommand: npx wdio wdio.conf.js --spec=$test
