@@ -10,9 +10,9 @@ The overall experience helps teams test code and fix issues at a much faster pac
 
 To know more about how HyperExecute does intelligent Test Orchestration, do check out [HyperExecute Getting Started Guide](https://www.lambdatest.com/support/docs/getting-started-with-hyperexecute/)
 
-[<img alt="Try it now" width="200 px" align="center" src="images/Try it Now.png" />](https://hyperexecute.lambdatest.com/?utm_source=github&utm_medium=repository&utm_content=javascript&utm_term=webdriver)
+[<img alt="Try it now" width="200 px" align="center" src="images/Try it Now.svg" />](https://hyperexecute.lambdatest.com/?utm_source=github&utm_medium=repository&utm_content=javascript&utm_term=webdriver)
 
-[<img alt="Run in Gitpod" width="200 px" align="center" src="images/Gitpod.png" />](https://hyperexecute.lambdatest.com/?type=gitpod&framework=WebdriverIO)
+[<img alt="Run in Gitpod" width="200 px" align="center" src="images/Gitpod.svg" />](https://hyperexecute.lambdatest.com/?type=gitpod&framework=WebdriverIO)
 
 Follow the below steps to run Gitpod button:
 
