@@ -16,7 +16,6 @@ Feature: ToDo Sample
         Then  Type LambdaTest in search box
         Then I am at login page
         Then Enter the username and accesskey
-        Then I perform action at Demo Page
 
    @ToDoTwo
     Scenario: Perform action in ToDo page two
@@ -31,7 +30,6 @@ Feature: ToDo Sample
         Then  Type LambdaTest in search box
         Then I am at login page
         Then Enter the username and accesskey
-        Then I perform action at Demo Page
 
         @ToDoThree
     Scenario: Perform action in ToDo page two
@@ -46,7 +44,6 @@ Feature: ToDo Sample
         Then  Type LambdaTest in search box
         Then I am at login page
         Then Enter the username and accesskey
-        Then I perform action at Demo Page
 
 
     
