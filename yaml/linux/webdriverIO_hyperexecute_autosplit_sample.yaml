@@ -1,14 +1,28 @@
 ---
 version: 0.1
+globalTimeout: 150
+testSuiteTimeout: 150
+testSuiteStep: 150
+
 runson: linux
-concurrency: 2
+
 autosplit: true
+retryOnFailure: true
+
+maxRetries: 1
+concurrency: 2
+
 pre:
   - npm install
+
+mergeArtifacts: true
+
+
 
 cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
+  
 testDiscovery:
   type: automatic
   args:

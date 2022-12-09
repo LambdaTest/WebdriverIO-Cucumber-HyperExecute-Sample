@@ -1,0 +1,33 @@
+---
+version: 0.1
+globalTimeout: 150
+testSuiteTimeout: 150
+testSuiteStep: 150
+
+runson: win
+
+autosplit: true
+retryOnFailure: true
+
+maxRetries: 1
+concurrency: 2
+
+pre:
+  - npm install
+
+mergeArtifacts: true
+
+
+
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+  
+testDiscovery:
+  type: automatic
+  args:
+    featureFilePaths: Features/
+    frameWork: java
+    specificTags: ["@ToDoOne", "@ToDoTwo", "@ToDoThree"]
+
+testRunnerCommand: npx wdio wdio.conf.js --spec=$test
