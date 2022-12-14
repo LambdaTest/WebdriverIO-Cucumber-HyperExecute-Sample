@@ -1,0 +1,20 @@
+---
+version: 0.1
+runson: linux
+concurrency: 2
+autosplit: true
+pre:
+  - npm install
+
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+  
+testDiscovery:
+  type: automatic
+  args:
+    featureFilePaths: Features/
+    frameWork: java
+    specificTags: ["@ToDoOne", "@ToDoTwo", "@ToDoThree"]
+
+testRunnerCommand: npx wdio wdio.conf.js --spec=$test
