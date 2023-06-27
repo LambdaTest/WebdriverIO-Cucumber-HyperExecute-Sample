@@ -17,3 +17,5 @@ testDiscovery:
     specificTags: ["@ToDoOne", "@ToDoTwo", "@ToDoThree"]
 
 testRunnerCommand: npx wdio wdio.conf.js --spec=$test
+
+jobLabel: [selenium-webdriverIO, win, autosplit-simple]
