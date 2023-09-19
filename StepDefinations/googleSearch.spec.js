@@ -15,12 +15,12 @@ Given(/^I am at google search page$/, function () {
 });
 
 Then(/^I click on google serach box$/, function () {
-    const searchBOx= $('/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input');
+    const searchBOx= $('//*[@id="APjFqb"]');
     searchBOx.click();
 });
 
 Then(/^Type LambdaTest in search box$/, function () {
-    const TypeLambdatest= $('/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input');
+    const TypeLambdatest= $('//*[@id="APjFqb"]');
     TypeLambdatest.setValue('Lambdatest');
 
 });
