@@ -1,27 +1,10 @@
 ---
 version: 0.1
-globalTimeout: 150
-testSuiteTimeout: 150
-testSuiteStep: 150
-
-runson: win
-
-autosplit: true
-retryOnFailure: true
-
-maxRetries: 1
+runson: mac
 concurrency: 2
-
+autosplit: true
 pre:
   - npm install
-
-mergeArtifacts: true
-
-uploadArtefacts:
-  [{
-    "name": "Reports",
-    "path": ["Reports/*"]
-  }]
 
 cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
@@ -36,4 +19,4 @@ testDiscovery:
 
 testRunnerCommand: npx wdio wdio.conf.js --spec=$test
 
-jobLabel: [selenium-webdriverIO, win, autosplit]
+jobLabel: [selenium-webdriverIO, mac, autosplit-simple]

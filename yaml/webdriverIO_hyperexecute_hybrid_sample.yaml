@@ -4,13 +4,16 @@ globalTimeout: 150
 testSuiteTimeout: 150
 testSuiteStep: 150
 
-runson: win
-
+runson: ${matrix.os}
 autosplit: true
 retryOnFailure: true
-
 maxRetries: 1
-concurrency: 2
+concurrency: 1
+parallelism: 1
+
+matrix:
+  os: [linux, mac, win]
+  tests: [ "Features/ToDo.feature:7","Features/ToDo.feature:21","Features/ToDo.feature:35"]
 
 pre:
   - npm install
@@ -26,9 +29,14 @@ uploadArtefacts:
 cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
+
+runtime:
+  language: node
+  version: "14"
   
 testDiscovery:
   type: automatic
+  mode: dynamic
   args:
     featureFilePaths: Features/
     frameWork: java
@@ -36,4 +44,4 @@ testDiscovery:
 
 testRunnerCommand: npx wdio wdio.conf.js --spec=$test
 
-jobLabel: [selenium-webdriverIO, win, autosplit]
+jobLabel: [selenium-webdriverIO, hybrid]
