@@ -16,6 +16,12 @@ pre:
 
 mergeArtifacts: true
 
+uploadArtefacts:
+  [{
+    "name": "Reports",
+    "path": ["Reports/*"]
+  }]
+
 featureFilePaths: Features/
 
 matrix:

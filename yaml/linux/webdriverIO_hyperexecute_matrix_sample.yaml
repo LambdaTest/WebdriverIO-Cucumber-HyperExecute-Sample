@@ -16,6 +16,12 @@ pre:
 
 mergeArtifacts: true
 
+uploadArtefacts:
+  [{
+    "name": "Reports",
+    "path": ["Reports/*"]
+  }]
+
 matrix:
   os: [linux]
   count: [1,2]

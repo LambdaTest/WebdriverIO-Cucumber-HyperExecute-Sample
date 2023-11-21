@@ -17,7 +17,11 @@ pre:
 
 mergeArtifacts: true
 
-
+uploadArtefacts:
+  [{
+    "name": "Reports",
+    "path": ["Reports/*"]
+  }]
 
 cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
