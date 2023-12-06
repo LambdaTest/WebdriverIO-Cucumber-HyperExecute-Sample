@@ -18,6 +18,14 @@ matrix:
 pre:
   - npm install
 
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+
+runtime:
+  language: node
+  version: "14"
+
 mergeArtifacts: true
 
 uploadArtefacts:
@@ -26,13 +34,11 @@ uploadArtefacts:
     "path": ["Reports/*"]
   }]
 
-cacheKey: '{{ checksum "package-lock.json" }}'
-cacheDirectories:
-  - node_modules
-
-runtime:
-  language: node
-  version: "14"
+report: true
+partialReports:
+    type: json
+    location: Reports/
+    frameworkName: extent
   
 testDiscovery:
   type: automatic

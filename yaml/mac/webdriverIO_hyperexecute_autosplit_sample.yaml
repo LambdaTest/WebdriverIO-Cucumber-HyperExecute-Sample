@@ -12,8 +12,16 @@ retryOnFailure: true
 maxRetries: 1
 concurrency: 1
 
+runtime:
+  language: node
+  version: "14"
+
 pre:
   - npm install
+
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
 
 mergeArtifacts: true
 
@@ -23,13 +31,11 @@ uploadArtefacts:
     "path": ["Reports/*"]
   }]
 
-cacheKey: '{{ checksum "package-lock.json" }}'
-cacheDirectories:
-  - node_modules
-
-runtime:
-  language: node
-  version: "14"
+report: true
+partialReports:
+    type: json
+    location: Reports/
+    frameworkName: extent
   
 testDiscovery:
   # mode: dynamic

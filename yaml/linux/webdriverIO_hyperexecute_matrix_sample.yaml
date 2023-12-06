@@ -14,14 +14,6 @@ concurrency: 2
 pre:
   - npm install
 
-mergeArtifacts: true
-
-uploadArtefacts:
-  [{
-    "name": "Reports",
-    "path": ["Reports/*"]
-  }]
-
 matrix:
   os: [linux]
   count: [1,2]
@@ -31,6 +23,20 @@ matrix:
 cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
+
+mergeArtifacts: true
+
+uploadArtefacts:
+  [{
+    "name": "Reports",
+    "path": ["Reports/*"]
+  }]
+
+report: true
+partialReports:
+    type: json
+    location: Reports/
+    frameworkName: extent
   
 testSuites:
   - npx wdio wdio.conf.js --spec=$test
