@@ -14,6 +14,14 @@ concurrency: 2
 pre:
   - npm install
 
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+
+runtime:
+  language: node
+  version: "14"
+
 mergeArtifacts: true
 
 uploadArtefacts:
@@ -22,20 +30,17 @@ uploadArtefacts:
     "path": ["Reports/*"]
   }]
 
-runtime:
-  language: node
-  version: "14"
+report: true
+partialReports:
+    type: json
+    location: Reports/
+    frameworkName: extent
 
 matrix:
   os: [linux]
   count: [1,2]
   tests: [ "Features/ToDo.feature:7","Features/ToDo.feature:21","Features/ToDo.feature:35"]
 
-
-cacheKey: '{{ checksum "package-lock.json" }}'
-cacheDirectories:
-  - node_modules
-  
 testSuites:
   - npx wdio wdio.conf.js --spec=$test
 

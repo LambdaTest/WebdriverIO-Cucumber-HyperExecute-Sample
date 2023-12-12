@@ -15,6 +15,10 @@ concurrency: 2
 pre:
   - npm install
 
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+
 mergeArtifacts: true
 
 uploadArtefacts:
@@ -23,9 +27,11 @@ uploadArtefacts:
     "path": ["Reports/*"]
   }]
 
-cacheKey: '{{ checksum "package-lock.json" }}'
-cacheDirectories:
-  - node_modules
+report: true
+partialReports:
+    type: json
+    location: Reports/
+    frameworkName: extent
   
 testDiscovery:
   type: automatic
