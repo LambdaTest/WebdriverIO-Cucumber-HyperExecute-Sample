@@ -1,0 +1,47 @@
+---
+version: 0.1
+globalTimeout: 150
+testSuiteTimeout: 150
+testSuiteStep: 150
+
+runson: mac
+
+retryOnFailure: true
+
+maxRetries: 1
+concurrency: 2
+
+pre:
+  - npm install
+
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+
+runtime:
+  language: node
+  version: "14"
+
+mergeArtifacts: true
+
+uploadArtefacts:
+  [{
+    "name": "Reports",
+    "path": ["Reports/*"]
+  }]
+
+report: true
+partialReports:
+    type: json
+    location: Reports/
+    frameworkName: extent
+
+matrix:
+  os: [linux]
+  count: [1,2]
+  tests: [ "Features/ToDo.feature:7","Features/ToDo.feature:21","Features/ToDo.feature:35"]
+
+testSuites:
+  - npx wdio wdio.conf.js --spec=$test
+
+jobLabel: [selenium-webdriverIO, mac, matrix]

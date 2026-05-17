@@ -1,0 +1,50 @@
+---
+version: 0.1
+globalTimeout: 150
+testSuiteTimeout: 150
+testSuiteStep: 150
+
+runson: mac
+
+autosplit: true
+retryOnFailure: true
+
+maxRetries: 1
+concurrency: 1
+
+runtime:
+  language: node
+  version: "14"
+
+pre:
+  - npm install
+
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+
+mergeArtifacts: true
+
+uploadArtefacts:
+  [{
+    "name": "Reports",
+    "path": ["Reports/*"]
+  }]
+
+report: true
+partialReports:
+    type: json
+    location: Reports/
+    frameworkName: extent
+  
+testDiscovery:
+  # mode: dynamic
+  type: automatic
+  args:
+    featureFilePaths: Features/
+    frameWork: java
+    specificTags: ["@ToDoOne", "@ToDoTwo", "@ToDoThree"]
+
+testRunnerCommand: npx wdio wdio.conf.js --spec=$test
+
+jobLabel: [selenium-webdriverIO, mac, autosplit]
