@@ -38,7 +38,7 @@ partialReports:
     frameworkName: extent
   
 testDiscovery:
-  # mode: dynamic
+  # mode: remote
   type: automatic
   args:
     featureFilePaths: Features/
