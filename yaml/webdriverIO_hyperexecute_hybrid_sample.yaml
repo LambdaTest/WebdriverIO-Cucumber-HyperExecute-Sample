@@ -42,7 +42,7 @@ partialReports:
   
 testDiscovery:
   type: automatic
-  mode: dynamic
+  mode: remote
   args:
     featureFilePaths: Features/
     frameWork: java
