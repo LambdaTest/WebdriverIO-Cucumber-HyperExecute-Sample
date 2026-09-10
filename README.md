@@ -13,7 +13,7 @@
 With TestMu AI (Formerly LambdaTest), you can run WebdriverIO and Cucumber BDD Selenium tests at scale using HyperExecute. This sample shows how to configure Node.js + WebdriverIO + Cucumber with HyperExecute to run on the TestMu AI cloud.
 
 - [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
-- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/) for the full setup walkthrough.
+- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/webdriverio-on-hyperexecute-grid/) for the full setup walkthrough.
 
 ### Prerequisites
 
