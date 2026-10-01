@@ -6,6 +6,10 @@ testSuiteStep: 150
 
 runson: linux
 
+runtime:
+  language: node
+  version: "14"
+
 retryOnFailure: true
 
 maxRetries: 1
@@ -20,7 +24,7 @@ matrix:
   tests: [ "Features/ToDo.feature:7","Features/ToDo.feature:21","Features/ToDo.feature:35"]
 
 
-cacheKey: '{{ checksum "package-lock.json" }}'
+cacheKey: 'v2-{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
 
@@ -39,6 +43,6 @@ partialReports:
     frameworkName: extent
   
 testSuites:
-  - npx wdio wdio.conf.js --spec=$test
+  - npx wdio wdio.conf.js --spec=$tests
 
 jobLabel: [selenium-webdriverIO, linux, matrix]

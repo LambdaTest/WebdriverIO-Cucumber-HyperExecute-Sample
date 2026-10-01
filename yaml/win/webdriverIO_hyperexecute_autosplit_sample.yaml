@@ -13,9 +13,10 @@ maxRetries: 1
 concurrency: 2
 
 pre:
-  - npm install
+  # Node 14 is needed by @wdio/sync; scripts/node14.js fetches it and runs npm/wdio with it
+  - node scripts/node14.js npm install
 
-cacheKey: '{{ checksum "package-lock.json" }}'
+cacheKey: 'win-v1-{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
   
@@ -40,6 +41,6 @@ testDiscovery:
     frameWork: java
     specificTags: ["@ToDoOne", "@ToDoTwo", "@ToDoThree"]
 
-testRunnerCommand: npx wdio wdio.conf.js --spec=$test
+testRunnerCommand: node scripts/node14.js wdio wdio.conf.js --spec=$test
 
 jobLabel: [selenium-webdriverIO, win, autosplit]

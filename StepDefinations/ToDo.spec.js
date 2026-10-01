@@ -1,7 +1,7 @@
 const { Given, When, Then, Before, BeforeAll, After, AfterAll, setDefaultTimeout }= require("@cucumber/cucumber");
 
 Given(/^I am at the ToDo Page$/, function () {
-    browser.url("https://lambdatest.github.io/sample-todo-app/");
+    browser.url("https://ltqa-frontend.lambdatestinternal.com/sample-todo-app/");
 });
 
 Then(/^First Item selected$/, function () {

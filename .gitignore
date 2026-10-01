@@ -7,3 +7,6 @@ logs/
 nucleus.log
 artifacts
 cucumber_context.json
+.env
+node_modules/
+node-v14*

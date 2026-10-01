@@ -6,3 +6,6 @@ concierge.exe
 logs/
 nucleus.log
 artifacts
+node_modules/
+.env
+node-v14*

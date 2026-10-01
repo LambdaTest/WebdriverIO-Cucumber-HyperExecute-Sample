@@ -12,15 +12,13 @@ maxRetries: 1
 concurrency: 2
 
 pre:
-  - npm install
+  # Node 14 has no darwin-arm64 build; use the x64 build (runs via Rosetta) since @wdio/sync needs Node <= 14
+  - bash -c 'curl -sL https://nodejs.org/dist/v14.21.3/node-v14.21.3-darwin-x64.tar.gz | tar xz'
+  - ./node-v14.21.3-darwin-x64/bin/node ./node-v14.21.3-darwin-x64/bin/npm install --scripts-prepend-node-path=true
 
-cacheKey: '{{ checksum "package-lock.json" }}'
+cacheKey: 'mac-v5-{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
-
-runtime:
-  language: node
-  version: "14"
 
 mergeArtifacts: true
 
@@ -37,11 +35,11 @@ partialReports:
     frameworkName: extent
 
 matrix:
-  os: [linux]
+  os: [mac]
   count: [1,2]
   tests: [ "Features/ToDo.feature:7","Features/ToDo.feature:21","Features/ToDo.feature:35"]
 
 testSuites:
-  - npx wdio wdio.conf.js --spec=$test
+  - ./node-v14.21.3-darwin-x64/bin/node node_modules/@wdio/cli/bin/wdio.js wdio.conf.js --spec=$tests
 
 jobLabel: [selenium-webdriverIO, mac, matrix]
