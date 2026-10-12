@@ -89,11 +89,11 @@ exports.config = {
     tagsInTitle: []
   },
 
-  afterScenario: function (result) {
+  afterScenario: async function (world, result) {
     if (result.passed === true) {
-      driver.executeScript('lambda-status=passed');
+      await driver.execute('lambda-status=passed');
     } else {
-      driver.executeScript('lambda-status=failed');
+      await driver.execute('lambda-status=failed');
     }
     // CLEAR LOCAL DATA AFTER TEST
   },

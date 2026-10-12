@@ -6,10 +6,6 @@ testSuiteStep: 150
 
 runson: linux
 
-runtime:
-  language: node
-  version: "14"
-
 retryOnFailure: true
 
 maxRetries: 1
@@ -24,7 +20,7 @@ matrix:
   tests: [ "Features/ToDo.feature:7","Features/ToDo.feature:21","Features/ToDo.feature:35"]
 
 
-cacheKey: 'v2-{{ checksum "package-lock.json" }}'
+cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
 

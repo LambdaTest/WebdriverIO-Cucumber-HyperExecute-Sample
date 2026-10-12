@@ -6,10 +6,6 @@ testSuiteStep: 150
 
 runson: linux
 
-runtime:
-  language: node
-  version: "14"
-
 autosplit: true
 retryOnFailure: true
 
@@ -19,7 +15,7 @@ concurrency: 2
 pre:
   - npm install
 
-cacheKey: 'v2-{{ checksum "package-lock.json" }}'
+cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
 
