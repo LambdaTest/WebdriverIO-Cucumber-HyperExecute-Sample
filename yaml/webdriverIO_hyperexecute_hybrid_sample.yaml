@@ -22,10 +22,6 @@ cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
 
-runtime:
-  language: node
-  version: "14"
-
 mergeArtifacts: true
 
 uploadArtefacts:

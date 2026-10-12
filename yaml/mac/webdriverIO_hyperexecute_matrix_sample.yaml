@@ -18,10 +18,6 @@ cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
 
-runtime:
-  language: node
-  version: "14"
-
 mergeArtifacts: true
 
 uploadArtefacts:
@@ -37,11 +33,11 @@ partialReports:
     frameworkName: extent
 
 matrix:
-  os: [linux]
+  os: [mac]
   count: [1,2]
   tests: [ "Features/ToDo.feature:7","Features/ToDo.feature:21","Features/ToDo.feature:35"]
 
 testSuites:
-  - npx wdio wdio.conf.js --spec=$test
+  - npx wdio wdio.conf.js --spec=$tests
 
 jobLabel: [selenium-webdriverIO, mac, matrix]

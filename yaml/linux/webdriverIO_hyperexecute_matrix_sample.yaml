@@ -39,6 +39,6 @@ partialReports:
     frameworkName: extent
   
 testSuites:
-  - npx wdio wdio.conf.js --spec=$test
+  - npx wdio wdio.conf.js --spec=$tests
 
 jobLabel: [selenium-webdriverIO, linux, matrix]

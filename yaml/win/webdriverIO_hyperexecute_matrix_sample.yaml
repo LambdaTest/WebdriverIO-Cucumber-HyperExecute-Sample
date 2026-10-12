@@ -19,7 +19,7 @@ cacheDirectories:
   - node_modules
 
 matrix:
-  os: [linux]
+  os: [win]
   count: [1,2]
   tests: [ "Features/ToDo.feature:7","Features/ToDo.feature:21","Features/ToDo.feature:35"]
 
@@ -40,6 +40,6 @@ partialReports:
 featureFilePaths: Features/
   
 testSuites:
-  - npx wdio wdio.conf.js --spec=$test
+  - npx wdio wdio.conf.js --spec=$tests
 
 jobLabel: [selenium-webdriverIO, win, matrix]

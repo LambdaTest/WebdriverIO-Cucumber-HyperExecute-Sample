@@ -12,10 +12,6 @@ retryOnFailure: true
 maxRetries: 1
 concurrency: 1
 
-runtime:
-  language: node
-  version: "14"
-
 pre:
   - npm install
 

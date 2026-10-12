@@ -1,11 +1,11 @@
 const { Given, When, Then, Before, BeforeAll, After, AfterAll, setDefaultTimeout }= require("@cucumber/cucumber");
 
-Given(/^I am at google search page$/, function () {
-    browser.url("https://www.google.com");
+Given(/^I am at google search page$/, async function () {
+    await browser.url("https://www.google.com");
     
     for( var i=0; i<600; i++){
-        browser.getTitle()
-        browser.getTitle()
+        await browser.getTitle()
+        await browser.getTitle()
     }
         
     
@@ -14,14 +14,14 @@ Given(/^I am at google search page$/, function () {
 
 });
 
-Then(/^I click on google serach box$/, function () {
-    const searchBOx= $('//*[@id="APjFqb"]');
-    searchBOx.click();
+Then(/^I click on google serach box$/, async function () {
+    const searchBOx= await $('[name="q"]');
+    await searchBOx.click();
 });
 
-Then(/^Type LambdaTest in search box$/, function () {
-    const TypeLambdatest= $('//*[@id="APjFqb"]');
-    TypeLambdatest.setValue('Lambdatest');
+Then(/^Type LambdaTest in search box$/, async function () {
+    const TypeLambdatest= await $('[name="q"]');
+    await TypeLambdatest.setValue('Lambdatest');
 
 });
 
